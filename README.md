@@ -24,29 +24,29 @@ KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL manageme
 - Testing Integration: Integrate testing functionalities to validate the integrity and performance of MySQL deployments, ensuring reliability and stability.
 
 ## Prerequisites
-- First we have to download Kubernetes from https://kubernetes.io/releases/download/ . Follow the steps as per your OS .
-- Test to ensure and version of Kubernetes that you installed run this command:
+- First requirement is to download Kubernetes (See https://kubernetes.io/releases/download/ for steps depending on your OS).
+- Test and ensure the version of installed Kubernetes using this command:
 ```sh
 kubectl --version client
 ```
-- Second prerequisite is to install Minikube.
-- But minikube also has some requirements, we prefer to install Docker for minikube . Install Docker from https://docs.docker.com/get-docker/ for your OS . 
-- After installing Docker , install Minikube from https://minikube.sigs.k8s.io/docs/start/ . Choose your OS , Architecture , release type and Installer type then follow the steps on website . 
-- After installation use the following command to start minikube .
+- Second prerequisite is Minikube.
+- Minikube also has some requirements that you may need to download, we prefered to install Docker for minikube. (Install Docker from https://docs.docker.com/get-docker/)
+- After installing Docker, install Minikube from https://minikube.sigs.k8s.io/docs/start/
+- Use the following command to start Minikube.
 ```sh
 start minikube
 ```
-- Minikube comes with a dashboard . To open dashboard type this command on terminal :-
+- Minikube comes with a dashboard. To open dashboard type this command.
 ```sh
 minikube dashboard
 ```
-- Minikube dashboard will open on your default browser . It will look something like this:-
+- Minikube dashboard should open on your default browser.
 ![N|Solid](https://i.postimg.cc/59nbYwKj/Screenshot-from-2024-02-16-03-28-58.png)
 
 
 #  Installation of MySQL Operator for Kubernetes
 #### Leveraging Manifest Files with kubectl
-First we have to  deploy the Custom Resource Definition (CRDs):
+First we need to deploy the Custom Resource Definition (CRDs):
 ```sh
  kubectl apply -f https://raw.githubusercontent.com/mysql/mysql-operator/8.3.0-2.1.2/deploy/deploy-crds.yaml
 ```
