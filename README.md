@@ -48,11 +48,11 @@ minikube dashboard
 #### Leveraging Manifest Files with kubectl
 First we need to deploy the Custom Resource Definition (CRDs):
 ```sh
- kubectl apply -f https://raw.githubusercontent.com/mysql/mysql-operator/8.3.0-2.1.2/deploy/deploy-crds.yaml
+ kubectl apply -f https://raw.githubusercontent.com/halfbloodedyash/KubeMysql/main/deploy-crds.yaml
 ```
 Then deploy MySQL Operator for Kubernetes:
 ```sh
- kubectl apply -f https://raw.githubusercontent.com/mysql/mysql-operator/8.3.0-2.1.2/deploy/deploy-operator.yaml
+ kubectl apply -f https://raw.githubusercontent.com/halfbloodedyash/KubeMysql/main/sql_operator.yaml
 ```
 Verify the operator is running by checking the deployment inside the mysql-operator namespace:
 ```sh
