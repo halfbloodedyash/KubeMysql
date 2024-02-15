@@ -24,7 +24,11 @@ KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL manageme
 - Testing Integration: Integrate testing functionalities to validate the integrity and performance of MySQL deployments, ensuring reliability and stability.
 
 ## Prerequisites
-- First requirement is to download Kubernetes (See https://kubernetes.io/releases/download/ for steps depending on your OS).
+- First requirement is to download Kubernetes
+```sh
+https://kubernetes.io/releases/download/
+```
+  
 - Test and ensure the version of installed Kubernetes using this command:
 ```sh
 kubectl --version client
