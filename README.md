@@ -33,9 +33,14 @@ https://kubernetes.io/releases/download/
 ```sh
 kubectl --version client
 ```
-- Second prerequisite is Minikube.
-- Minikube also has some requirements that you may need to download, we prefered to install Docker for minikube. (Install Docker from https://docs.docker.com/get-docker/)
-- After installing Docker, install Minikube from https://minikube.sigs.k8s.io/docs/start/
+- Second prerequisite is Minikube
+```sh
+https://minikube.sigs.k8s.io/docs/start/
+```
+- Install Docker (Prerequisities of Minikube. (Install Docker from https://docs.docker.com/get-docker/)
+```sh
+https://docs.docker.com/get-docker/
+```
 - Use the following command to start Minikube.
 ```sh
 start minikube
