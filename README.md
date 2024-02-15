@@ -1,1 +1,111 @@
-# KubeMysql
+# KubeMysqlOperator
+## _"Streamline MySQL in Kubernetes : Simplify. Automate. Scale."_
+
+[![N|Solid](https://i.postimg.cc/Pf2jxZ1F/1-Pbb5rmrwh-e-AFWXd8ws79-A.png)](https://kubernetes.io/)
+
+
+
+KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL management within Kubernetes clusters by automating deployment, configuration, and scaling tasks. It simplifies database operations by providing seamless provisioning of MySQL instances as stateful sets with attached persistent volumes and manages configurations while ensuring reliability and consistency through logical updates.
+
+
+## Features
+
+- Automated Deployment: Provision MySQL instances as stateful sets with attached persistent volumes, simplifying the deployment process.
+- Service Creation: Automatically create Kubernetes services for accessing MySQL databases, including both cluster IP and headless services.
+- Configuration Management: Manage MySQL configurations such as tuning parameters and replication settings directly from the operator.
+- Logical Updates: Enable seamless updates to MySQL stateful sets and configurations using a logical approach to maintain reliability and consistency.
+- Scalability: Easily scale MySQL instances within Kubernetes clusters to meet changing demands without manual intervention.
+- Monitoring : Integrate monitoring functionality to provide visibility into the health and performance of MySQL databases.
+- Customization: Allow customization of deployment and configuration options to cater to specific use cases and requirements.
+- Security: Enhance security by implementing best practices for securing MySQL deployments within Kubernetes environments.
+- Documentation and Support: Provide comprehensive documentation and support resources to assist users in deploying, configuring, and troubleshooting the operator.
+- Backup Management: Facilitate automated backups of MySQL databases, enabling users to schedule and manage backup tasks directly from the operator.
+- Configuration Flexibility: Offer flexibility in configuring MySQL instances, allowing users to customize parameters and settings according to their specific requirements.
+- Testing Integration: Integrate testing functionalities to validate the integrity and performance of MySQL deployments, ensuring reliability and stability.
+
+## Prerequisites
+- First we have to download Kubernetes from https://kubernetes.io/releases/download/ . Follow the steps as per your OS .
+- Test to ensure and version of Kubernetes that you installed run this command:
+```sh
+kubectl --version client
+```
+- Second prerequisite is to install Minikube.
+- But minikube also has some requirements, we prefer to install Docker for minikube . Install Docker from https://docs.docker.com/get-docker/ for your OS . 
+- After installing Docker , install Minikube from https://minikube.sigs.k8s.io/docs/start/ . Choose your OS , Architecture , release type and Installer type then follow the steps on website . 
+- After installation use the following command to start minikube .
+```sh
+start minikube
+```
+- Minikube comes with a dashboard . To open dashboard type this command on terminal :-
+```sh
+minikube dashboard
+```
+- Minikube dashboard will open on your default browser . It will look something like this:-
+![N|Solid](https://i.postimg.cc/59nbYwKj/Screenshot-from-2024-02-16-03-28-58.png)
+
+
+#  Installation of MySQL Operator for Kubernetes
+#### Leveraging Manifest Files with kubectl
+First we have to  deploy the Custom Resource Definition (CRDs):
+```sh
+ kubectl apply -f https://raw.githubusercontent.com/mysql/mysql-operator/8.3.0-2.1.2/deploy/deploy-crds.yaml
+```
+Then deploy MySQL Operator for Kubernetes:
+```sh
+ kubectl apply -f https://raw.githubusercontent.com/mysql/mysql-operator/8.3.0-2.1.2/deploy/deploy-operator.yaml
+```
+Verify the operator is running by checking the deployment inside the mysql-operator namespace:
+```sh
+kubectl get deployment -n mysql-operator mysql-operator
+```
+[![N|Solid](https://i.postimg.cc/8c0M02ZY/Screenshot-from-2024-02-16-03-09-31.png)]
+
+# MySQL InnoDB Cluster Installation
+#### Using kubectl
+```sh
+ kubectl create secret generic mypwds \
+        --from-literal=rootUser=root \
+        --from-literal=rootHost=% \
+        --from-literal=rootPassword="root"
+```
+#### Define your MySQL InnoDB Cluster, which references the secret. For example:
+We will create a Yaml file named accordingly and paste this into it
+```sh
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata:
+  name: mycluster
+spec:
+  secretName: mypwds
+  tlsUseSelfSigned: true
+  instances: 3
+  router:
+    instances: 1
+```
+#### Assume it's saved as mycluster.yaml, deploy it:
+
+```sh
+kubectl apply -f mycluster.yaml
+```
+##### This example sets up an InnoDB Cluster comprising three MySQL Server instances and one MySQL Router instance. You can monitor the entire process by:
+```sh
+kubectl get innodbcluster --watch
+```
+![N|Solid](https://i.postimg.cc/5NDBJFVk/Screenshot-from-2024-02-16-03-34-16.png)
+
+## Connecting to MySQL InnoDB Cluster
+###### A MySQL InnoDB Cluster Service is created inside the Kubernetes cluster:
+```sh
+ kubectl get service mycluster
+ ```
+ ![N|Solid](https://i.postimg.cc/vZbQ4b5L/Screenshot-from-2024-02-16-03-42-59.png)
+ #### To check Persistent Volumes and Persistent Volume Claims
+ ![N|Solid]( https://i.postimg.cc/vZyxzRw3/Screenshot-from-2024-02-16-03-54-35.png)
+ #### Use this Command to execute Mysql on Kubernetes
+ ```sh
+ kubectl exec -it <Your_Pod_Name> -- mysql -u root -p
+```
+![N|Solid](https://i.postimg.cc/0Qv8gvZB/Screenshot-from-2024-02-16-04-01-18.png)
+
+
+
