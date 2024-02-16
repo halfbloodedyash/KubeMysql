@@ -4,7 +4,7 @@
 ## _"Streamline MySQL in Kubernetes : Simplify. Automate. Scale."_
 
 
-KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL management within Kubernetes clusters by automating deployment, configuration, and scaling tasks. It simplifies database operations by providing seamless provisioning of MySQL instances as stateful sets with attached persistent volumes and manages configurations while ensuring reliability and consistency through logical updates.hat
+KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL management within Kubernetes clusters by automating deployment, configuration, and scaling tasks. It simplifies database operations by providing seamless provisioning of MySQL instances as stateful sets with attached persistent volumes and manages configurations while ensuring reliability and consistency through logical updates.
 
 ## Problems
 - Creating MySQL as a stateful set with attached persistent volume
