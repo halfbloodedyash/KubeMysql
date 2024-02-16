@@ -120,6 +120,36 @@ kubectl get innodbcluster --watch
 ![N|Solid](https://i.postimg.cc/2yGKC2K4/Screenshot-from-2024-02-16-05-24-42.png
 )
 
+# MySQL Management Script
+
+This Python script provides functionalities for managing a MySQL database running in Kubernetes. It utilizes subprocess to execute various commands related to backup, configuration management, rolling updates, testing, and monitoring.
+
+## Features
+
+- **Backup Data**: Performs a MySQL backup using mysqldump and writes the backup to a file named `backup.sql`.
+- **Update Configuration**: Placeholder function for updating configuration. You can replace it with actual commands as per your requirements.
+- **Rolling Update**: Triggers a rolling update for the StatefulSet managing MySQL.
+- **Configuration Management**: Checks the MySQL configuration within Pods.
+- **Testing**: Conducts various tests such as selection, CRUD operations, and replication verification.
+- **Monitoring**: Retrieves the list of MySQL Pods and checks their status.
+
+## Prerequisites
+
+- Python 3.x
+- MySQL client tools installed
+- kubectl configured to access the Kubernetes cluster
+
+## Usage
+
+. Ensure that Python and required dependencies are installed.
+. Configure access to the Kubernetes cluster using `kubectl`.
+. Modify the script if necessary to fit your environment.
+. Execute the script using Python.
+
+```bash
+python mysql_management.py
+
+
 
 
 
