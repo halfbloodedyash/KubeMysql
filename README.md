@@ -1,8 +1,4 @@
 # KubeMysqlOperator
-![N|Solid](https://i.postimg.cc/jq3zv90G/hhh.jpg)
-
-![N|Solid](https://i.postimg.cc/jq3zv90G/hhh.jpg)
-
 [![N|Solid](https://i.postimg.cc/Pf2jxZ1F/1-Pbb5rmrwh-e-AFWXd8ws79-A.png)](https://kubernetes.io/)
 
 ## _"Streamline MySQL in Kubernetes : Simplify. Automate. Scale."_
