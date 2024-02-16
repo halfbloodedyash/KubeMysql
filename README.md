@@ -43,7 +43,7 @@ https://docs.docker.com/get-docker/
 ```
 - Use the following command to start Minikube.
 ```sh
-start minikube
+minikube start 
 ```
 - Minikube comes with a dashboard. To open dashboard type this command.
 ```sh
