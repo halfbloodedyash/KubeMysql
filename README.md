@@ -1,4 +1,4 @@
-# KubeMysqlOperator
+# KubeMysql
 [![N|Solid](https://i.postimg.cc/Pf2jxZ1F/1-Pbb5rmrwh-e-AFWXd8ws79-A.png)](https://kubernetes.io/)
 
 ## _"Streamline MySQL in Kubernetes : Simplify. Automate. Scale."_
@@ -157,11 +157,10 @@ This Python script provides functionalities for managing a MySQL database runnin
 - kubectl configured to access the Kubernetes cluster
 
 ## Usage
-
-. Ensure that Python and required dependencies are installed.
-. Configure access to the Kubernetes cluster using `kubectl`.
-. Modify the script if necessary to fit your environment.
-. Execute the script using Python.
+Ensure that Python and required dependencies are installed.
+Configure access to the Kubernetes cluster using `kubectl`.
+Modify the script if necessary to fit your environment.
+Execute the script using Python.
 
 ```bash
 python /Automation.py
