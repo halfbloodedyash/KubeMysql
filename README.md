@@ -14,7 +14,6 @@ KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL manageme
 ## Features
 
 - Automated Deployment: Provision MySQL instances as stateful sets with attached persistent volumes, simplifying the deployment process.
-- Service Creation: Automatically create Kubernetes services for accessing MySQL databases, including both cluster IP and headless services.
 - Configuration Management: Manage MySQL configurations such as tuning parameters and replication settings directly from the operator.
 - Logical Updates: Enable seamless updates to MySQL stateful sets and configurations using a logical approach to maintain reliability and consistency.
 - Scalability: Easily scale MySQL instances within Kubernetes clusters to meet changing demands without manual intervention.
