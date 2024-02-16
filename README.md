@@ -147,8 +147,7 @@ This Python script provides functionalities for managing a MySQL database runnin
 . Execute the script using Python.
 
 ```bash
-python mysql_management.py
-
+python /Automation.py
 
 
 
