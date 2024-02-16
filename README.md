@@ -1,13 +1,20 @@
 # KubeMysqlOperator
+![N|Solid](https://i.postimg.cc/jq3zv90G/hhh.jpg)
+
+![N|Solid](https://i.postimg.cc/jq3zv90G/hhh.jpg)
 
 [![N|Solid](https://i.postimg.cc/Pf2jxZ1F/1-Pbb5rmrwh-e-AFWXd8ws79-A.png)](https://kubernetes.io/)
 
 ## _"Streamline MySQL in Kubernetes : Simplify. Automate. Scale."_
 
 
-KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL management within Kubernetes clusters by automating deployment, configuration, and scaling tasks. It simplifies database operations by providing seamless provisioning of MySQL instances as stateful sets with attached persistent volumes and manages configurations while ensuring reliability and consistency through logical updates.
+KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL management within Kubernetes clusters by automating deployment, configuration, and scaling tasks. It simplifies database operations by providing seamless provisioning of MySQL instances as stateful sets with attached persistent volumes and manages configurations while ensuring reliability and consistency through logical updates.hat
 
-
+## Problems
+- Creating MySQL as a stateful set with attached persistent volume
+- Managing MySQL configurations using the operator
+- Creating two Kubernetes services: one with a cluster IP and the other as a headless service
+- Updating MySQL stateful-set and configuration from the operator using a logical approach.
 ## Features
 
 - Automated Deployment: Provision MySQL instances as stateful sets with attached persistent volumes, simplifying the deployment process.
@@ -124,6 +131,14 @@ kubectl get innodbcluster --watch
 #### All Services
 
 ![N|Solid](https://i.postimg.cc/jq3zv90G/hhh.jpg)
+
+#### Using Port Forwarding
+```sh
+kubectl port-forward service/mycluster mysql
+```
+![N|Solid](https://i.postimg.cc/LsKxVsgC/portforwarding.jpg)
+
+
 # MySQL Management Script
 
 This Python script provides functionalities for managing a MySQL database running in Kubernetes. It utilizes subprocess to execute various commands related to backup, configuration management, rolling updates, testing, and monitoring.
