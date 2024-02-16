@@ -66,6 +66,8 @@ Then deploy MySQL Operator for Kubernetes:
 ```sh
  kubectl apply -f https://raw.githubusercontent.com/halfbloodedyash/KubeMysql/main/sql_operator.yaml
 ```
+![N|Solid](https://dev.mysql.com/doc/refman/8.0/en/images/innodb_cluster_overview.png)
+
 Verify the operator is running by checking the deployment inside the mysql-operator namespace:
 ```sh
 kubectl get deployment -n mysql-operator mysql-operator
