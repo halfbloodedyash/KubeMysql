@@ -120,6 +120,10 @@ kubectl get innodbcluster --watch
 #### Headless_Service.yaml
 ![N|Solid](https://i.postimg.cc/2yGKC2K4/Screenshot-from-2024-02-16-05-24-42.png
 )
+
+#### All Services
+
+![N|Solid](https://i.postimg.cc/jq3zv90G/hhh.jpg)
 # MySQL Management Script
 
 This Python script provides functionalities for managing a MySQL database running in Kubernetes. It utilizes subprocess to execute various commands related to backup, configuration management, rolling updates, testing, and monitoring.
