@@ -39,7 +39,7 @@ kubectl --version client
 ```sh
 https://minikube.sigs.k8s.io/docs/start/
 ```
-- Install Docker (Prerequisities of Minikube. (Install Docker from https://docs.docker.com/get-docker/)
+- Install Docker (Prerequisities of Minikube. 
 ```sh
 https://docs.docker.com/get-docker/
 ```
