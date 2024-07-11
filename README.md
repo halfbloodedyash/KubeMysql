@@ -3,15 +3,15 @@
 
 ## _"Streamline MySQL in Kubernetes : Simplify. Automate. Scale."_
 
-KubeMySQLOperator is a Kubernetes operator designed to streamline MySQL management within Kubernetes clusters by automating deployment, configuration, and scaling tasks. It simplifies database operations by providing seamless provisioning of MySQL instances as stateful sets with attached persistent volumes and manages configurations while ensuring reliability and consistency through logical updates.
+"KubeMySQLOperator" is a Kubernetes operator designed to streamline "MySQL" management within Kubernetes clusters by automating deployment, configuration, and scaling tasks. It simplifies database operations by providing seamless provisioning of MySQL instances as stateful sets with attached persistent volumes and manages configurations while ensuring reliability and consistency through logical updates.
 
 ## Problem Statement
 - Creating MySQL as a stateful set with attached persistent volume
 - Managing MySQL configurations using the operator
 - Creating two Kubernetes services: one with a cluster IP and the other as a headless service
 - Updating MySQL stateful-set and configuration from the operator using a logical approach.
+  
 ## Features
-
 - Automated Deployment: Provision MySQL instances as stateful sets with attached persistent volumes, simplifying the deployment process.
 - Configuration Management: Manage MySQL configurations such as tuning parameters and replication settings directly from the operator.
 - Logical Updates: Enable seamless updates to MySQL stateful sets and configurations using a logical approach to maintain reliability and consistency.
@@ -155,6 +155,7 @@ This Python script provides functionalities for managing a MySQL database runnin
 - kubectl configured to access the Kubernetes cluster
 
 ## Usage
+
 Ensure that Python and required dependencies are installed.
 Configure access to the Kubernetes cluster using `kubectl`.
 Modify the script if necessary to fit your environment.
